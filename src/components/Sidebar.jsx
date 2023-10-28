@@ -32,9 +32,7 @@ const Sidebar = () => {
       {/* logo */}
       <div className="logo">
         <img src={Logo} alt="logo" />
-        <span>
-          Sh<span>o</span>ps
-        </span>
+        <h6>Bharat Cloud</h6>
       </div>
 
       <div className="menu">

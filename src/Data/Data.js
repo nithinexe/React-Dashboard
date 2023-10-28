@@ -25,15 +25,15 @@ export const SidebarData = [
   },
   {
     icon: UilClipboardAlt,
-    heading: "Orders",
+    heading: "Sales",
   },
   {
     icon: UilUsersAlt,
-    heading: "Customers",
+    heading: "Technical Status",
   },
   {
     icon: UilPackage,
-    heading: 'Products'
+    heading: 'Account Status'
   },
   {
     icon: UilChart,
@@ -44,50 +44,50 @@ export const SidebarData = [
 // Analytics Cards Data
 export const cardsData = [
   {
-    title: "Sales",
+    title: "Total Leads",
     color: {
       backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
       boxShadow: "0px 10px 20px 0px #e0c6f5",
     },
-    barValue: 70,
-    value: "25,970",
+    barValue: 100,
+    value: "100",
     png: UilUsdSquare,
     series: [
       {
-        name: "Sales",
+        name: "Total Leads",
         data: [31, 40, 28, 51, 42, 109, 100],
       },
     ],
   },
   {
-    title: "Revenue",
+    title: "Approved Leads",
     color: {
       backGround: "linear-gradient(180deg, #FF919D 0%, #FC929D 100%)",
       boxShadow: "0px 10px 20px 0px #FDC0C7",
     },
-    barValue: 80,
-    value: "14,270",
+    barValue: 50,
+    value: "50",
     png: UilMoneyWithdrawal,
     series: [
       {
-        name: "Revenue",
+        name: "Approved Leads",
         data: [10, 100, 50, 70, 80, 30, 40],
       },
     ],
   },
   {
-    title: "Expenses",
+    title: "Pending Leads",
     color: {
       backGround:
         "linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255 202 113) -46.42%)",
       boxShadow: "0px 10px 20px 0px #F9D59B",
     },
-    barValue: 60,
-    value: "4,270",
+    barValue: 50,
+    value: "50",
     png: UilClipboardAlt,
     series: [
       {
-        name: "Expenses",
+        name: "Pending Leads",
         data: [10, 25, 15, 30, 12, 15, 20],
       },
     ],
@@ -98,20 +98,24 @@ export const cardsData = [
 export const UpdatesData = [
   {
     img: img1,
-    name: "Andrew Thomas",
-    noti: "has ordered Apple smart watch 2500mh battery.",
+    name: "Cyllian Murphy",
+    noti: "lorenipsum dolor sit amet, consectetur adipiscing elit.",
     time: "25 seconds ago",
   },
   {
     img: img2,
-    name: "James Bond",
-    noti: "has received Samsung gadget for charging battery.",
+    name: "Micheal Scofield",
+    noti: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     time: "30 minutes ago",
   },
   {
     img: img3,
-    name: "Iron Man",
-    noti: "has ordered Apple smart watch, samsung Gear 2500mh battery.",
+    name: "John Doe",
+    noti: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     time: "2 hours ago",
   },
 ];
+// cardsData[0].value = cardsData[0].value.replace('$', '');
+cardsData.forEach(card => {
+  card.value = card.value.replace('$', '');
+});
