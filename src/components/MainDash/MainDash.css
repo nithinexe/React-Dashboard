@@ -4,6 +4,12 @@
     flex-direction: column;
     justify-content: space-evenly;
 }
+/* .dashboard{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+} */
 
 @media screen and (max-width: 1200px) {
     .MainDash{

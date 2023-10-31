@@ -6,6 +6,7 @@ import {
   UilPackage,
   UilChart,
   UilSignOutAlt,
+  UilSignInAlt,
 } from "@iconscout/react-unicons";
 
 // Analytics Cards imports
@@ -22,22 +23,27 @@ export const SidebarData = [
   {
     icon: UilEstate,
     heading: "Dashboard",
+    path : "/dashboard",
   },
   {
     icon: UilClipboardAlt,
     heading: "Sales",
+    path : "/sales",
   },
   {
     icon: UilUsersAlt,
     heading: "Technical Status",
+    path : "/technicalstatus",
   },
   {
     icon: UilPackage,
-    heading: 'Account Status'
+    heading: 'Account Status',
+    path: "/accountstatus",
   },
   {
-    icon: UilChart,
-    heading: 'Analytics'
+    icon: UilSignOutAlt,
+    heading: 'SignIn',
+    path: "/signin",
   },
 ];
 
@@ -107,6 +113,30 @@ export const UpdatesData = [
     name: "Micheal Scofield",
     noti: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     time: "30 minutes ago",
+  },
+  {
+    img: img3,
+    name: "John Doe",
+    noti: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    time: "2 hours ago",
+  },
+  {
+    img: img3,
+    name: "John Doe",
+    noti: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    time: "2 hours ago",
+  },
+  {
+    img: img3,
+    name: "John Doe",
+    noti: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    time: "2 hours ago",
+  },
+  {
+    img: img3,
+    name: "John Doe",
+    noti: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    time: "2 hours ago",
   },
   {
     img: img3,
