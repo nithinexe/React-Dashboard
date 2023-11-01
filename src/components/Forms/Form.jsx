@@ -1,5 +1,5 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import Logo from '../../imgs/logo.png';
+
 
 import React, { useState } from 'react';
 import './Form.css';
@@ -26,7 +26,7 @@ const SalesForm = () => {
   return (
     <div className="sales-box">
       <div className="logo">
-        <img src="bcdc.jpeg" alt="Logo" width="300" />
+        <img src={Logo} alt="Logo" width="300" />
       </div>
       <h2 className="title">Sales Form</h2>
       <div className="input-group">

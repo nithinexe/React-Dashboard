@@ -6,9 +6,11 @@
     font-weight: bold !important;
   }
  
+ .Table{
+    overflow-y: auto;
+  }
 
-
-  .SalesTable td,
+  .Table td,
   th {
     border: none !important;
   }

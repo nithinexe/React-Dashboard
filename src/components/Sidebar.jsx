@@ -6,61 +6,74 @@ import { SidebarData } from "../Data/Data";
 import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
+import { UilSearch } from "@iconscout/react-unicons";
 
 const Sidebar = () => {
   const [setSelected] = useState(0);
 
-  const [expanded, setExpaned] = useState(true)
+  const [expanded, setExpaned] = useState(true);
 
   const sidebarVariants = {
     true: {
-      left : '0'
+      left: "0",
     },
-    false:{
-      left : '-60%'
-    }
-  }
-  console.log(window.innerWidth)
+    false: {
+      left: "-60%",
+    },
+  };
+  console.log(window.innerWidth);
   return (
     <>
-      <div className="bars" style={expanded?{left: '60%'}:{left: '5%'}} onClick={()=>setExpaned(!expanded)}>
+      <div
+        className="bars"
+        style={expanded ? { left: "60%" } : { left: "5%" }}
+        onClick={() => setExpaned(!expanded)}
+      >
         <UilBars />
       </div>
-    <motion.div className='sidebar'
-    variants={sidebarVariants}
-    animate={window.innerWidth<=768?`${expanded}`:''}
-    >
-      {/* logo */}
-      <div className="logo">
-        <img src={Logo} alt="logo" />
-        <h6>Bharat Cloud</h6>
-      </div>
-
-      <div className="menu">
-        {SidebarData.map((item, index) => {
-          return (
-            <NavLink className="menuItem"
-            to={item.path}
-              key={index}
-              onClick={() => setSelected(index)}
-            >
-              <item.icon />
-              <span>{item.heading}</span>
-            </NavLink>
-          );
-        })}
-        {/* signoutIcon */}
-        <div className="menuItem">
-          <UilSignInAlt />SignOut
+      <motion.div
+        className="sidebar"
+        variants={sidebarVariants}
+        animate={window.innerWidth <= 768 ? `${expanded}` : ""}
+      >
+        {/* logo */}
+        <div className="logo">
+          <img src={Logo} alt="logo" />
+          <h6>Bharat Cloud</h6>
         </div>
-      </div>
-    </motion.div>
+
+        {/* Menu-Sidebar */}
+
+        <div className="menu">
+          <div className="search-container">
+          <input type="search" placeholder="Search..."/>
+           
+          </div>
+          {SidebarData.map((item, index) => {
+            return (
+              <NavLink
+                className="menuItem"
+                to={item.path}
+                key={index}
+                onClick={() => setSelected(index)}
+              >
+                <item.icon />
+                <span>{item.heading}</span>
+              </NavLink>
+            );
+          })}
+          {/* signoutIcon */}
+          <div className="menuItem">
+            <UilSignInAlt />
+            SignOut
+          </div>
+        </div>
+      </motion.div>
     </>
   );
 };
 
 export default Sidebar;
-
 
 // import React, { useState } from "react";
 // import "./Sidebar.css";
@@ -70,7 +83,6 @@ export default Sidebar;
 // import { UilBars } from "@iconscout/react-unicons";
 // import { motion } from "framer-motion";
 // import { Link } from "react-router-dom";
-
 
 // const Sidebar = () => {
 //   const [selected, setSelected] = useState(0);

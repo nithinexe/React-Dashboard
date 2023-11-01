@@ -40,11 +40,6 @@ export const SidebarData = [
     heading: 'Account Status',
     path: "/accountstatus",
   },
-  {
-    icon: UilSignOutAlt,
-    heading: 'SignIn',
-    path: "/signin",
-  },
 ];
 
 // Analytics Cards Data
@@ -146,6 +141,6 @@ export const UpdatesData = [
   },
 ];
 // cardsData[0].value = cardsData[0].value.replace('$', '');
-cardsData.forEach(card => {
-  card.value = card.value.replace('$', '');
-});
+// cardsData.forEach(card => {
+//   card.value = card.value.replace('$', '');
+// });

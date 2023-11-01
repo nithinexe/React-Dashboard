@@ -31,17 +31,18 @@ const makeStyle=(status)=>{
   else if(status === 'Pending')
   {
     return{
-      background: '#ffadad8f',
-      color: 'red',
-    }
-  }
-  else{
-    return{
       background: '#59bfff',
       color: 'white',
     }
   }
+  else{
+    return{
+      background: '#ffadad8f',
+      color: 'red',
+    }
+  }
 }
+
 
 export default function BasicTable() {
   return (

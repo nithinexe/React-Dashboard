@@ -6,26 +6,28 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import "./TechnicalStatusTable.css";
 
-import './TechnicalStatusTable.css'
-
-function createData(name, trackingId, date, status) {
-  return { name, trackingId, date, status };
+function createData(name, trackingId, date, status, technicalstatus, details) {
+  return { name, trackingId, date, status, technicalstatus, details };
 }
 
 const rows = [
-  createData("Ben Awad", 12306731, "2 March 2022", "Approved"),
-  createData("Christopher Nolan ", 98710456, "2 March 2022", "Pending"),
-  createData("Cyllian Murphy", 41233789, "4 March 2022", "Approved"),
-  createData("Xavier Scott", 18908421, "19 March 2022", "Rejected"),
-  createData("Cravis Scott", 18908421, "19 March 2022", "Rejected"),
-  createData("Travis Smoch", 18908421, "19 March 2022", "Approved"),
-  createData("Travis Scott", 18908421, "19 March 2022", "Rejected"),
-  createData("Travis Scott", 18908421, "19 March 2022", "Approved"),
-  createData("Travis Scott", 18908421, "19 March 2022", "Approved"),
+  createData("Ben Awad", 12306731, "2 March 2022", "Approved","Rejected"),
+  createData("Christopher Nolan ", 98710456, "2 March 2022", "Pending", "Approved"),
+  createData("Cyllian Murphy", 41233789, "4 March 2022", "Approved", "Pending"),
+  createData("Travis Scott", 18908421, "19 March 2022", "Rejected", "Rejected"),
+  createData("Travis Scott", 18908421, "19 March 2022", "Approved", "Rejected"),
+  createData("Travis Scott", 18908421, "19 March 2022", "Rejected", "Rejected"),
+  createData("Travis Scott", 18908421, "19 March 2022", "Rejected", "Rejected"),
+  createData("Travis Scott", 18908421, "19 March 2022", "Pending", "Pending"),
+  createData("Travis Scott", 18908421, "19 March 2022", "Approved", "Approved"),
+  createData("Christopher Nolan ", 98710456, "2 March 2022", "Pending", "Approved"),
+  createData("Cyllian Murphy", 41233789, "4 March 2022", "Approved", "Pending"),
 ];
 
-const filteredRows = rows.filter((row) => row.status === "Approved");
+
+const filteredRows = rows.filter((row) => row.technicalstatus === "Approved");
 
 const makeStyle=(status)=>{
   if(status === 'Approved')
@@ -38,35 +40,36 @@ const makeStyle=(status)=>{
   else if(status === 'Pending')
   {
     return{
-      background: '#ffadad8f',
-      color: 'red',
+      background: '#59bfff',
+      color: 'white',
     }
   }
   else{
     return{
-      background: '#59bfff',
-      color: 'white',
+      background: '#ffadad8f',
+      color: 'red',
     }
   }
 }
 
 export default function TechnicalStatusTable() {
   return (
-      <div className="SalesTable">
-      <h3>Recent Orders</h3>
-        <TableContainer
+      <div className="Table">
+      <h3>Total Sales</h3>
+
+        <TableContainer className="container-table"
           component={Paper}
           style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
         >
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <Table sx={{ minWidth: 650 }} aria-label="simple table" className="table">
             <TableHead>
               <TableRow>
                 <TableCell>Client Name</TableCell>
                 <TableCell align="left">UID</TableCell>
                 <TableCell align="left">Date</TableCell>
-                <TableCell align="left">Status</TableCell>
-                <TableCell align="left">Status</TableCell>
-                <TableCell align="left">Lorem</TableCell>
+                <TableCell align="left">Sales Status</TableCell>
+                <TableCell align="left">Technical Status</TableCell>
+                <TableCell align="left">Details</TableCell>
                 <TableCell align="left"></TableCell>
               </TableRow>
             </TableHead>
@@ -81,8 +84,11 @@ export default function TechnicalStatusTable() {
                   </TableCell>
                   <TableCell align="left">{row.trackingId}</TableCell>
                   <TableCell align="left">{row.date}</TableCell>
-                  <TableCell align="left">
+                  <TableCell align="center">
                     <span className="status" style={makeStyle(row.status)}>{row.status}</span>
+                  </TableCell>
+                  <TableCell align="center">
+                    <span className="status" style={makeStyle(row.technicalstatus)}>{row.technicalstatus}</span>
                   </TableCell>
                   <TableCell align="left" className="Details">Details</TableCell>
                 </TableRow>
@@ -93,3 +99,7 @@ export default function TechnicalStatusTable() {
       </div>
   );
 }
+
+
+
+// const filteredRows = rows.filter((row) => row.status === "Approved");

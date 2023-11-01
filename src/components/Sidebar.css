@@ -48,7 +48,19 @@
   border-radius: 0.7rem;
   font-size: 14px;
   color: var(--black);
+  text-decoration: none;
 }
+
+input[type="search"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  margin-left: 10px;
+
+}
+
 
 .menuItem:hover {
   cursor: pointer;

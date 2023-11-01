@@ -6,24 +6,25 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import "./SalesTable.css";
+import "./AccountStatusTable.css";
+import { Link } from "react-router-dom";
 
-function createData(orderId, name, trackingId, date, status, technicalstatus, details) {
-  return {orderId, name, trackingId, date, status, technicalstatus, details };
+function createData(orderID, name, trackingId, date, status, technicalstatus, accountstatus, details) {
+  return { orderID, name, trackingId, date, status, technicalstatus,accountstatus, details };
 }
 
 const rows = [
-  createData("2312","Ben Awad", 12306731, "2 March 2022", "Approved","Rejected"),
-  createData("3223","Christopher Nolan ", 98710456, "2 March 2022", "Approved", "Approved"),
-  createData("6578","Cyllian Murphy", 41233789, "4 March 2022", "Approved", "Pending"),
-  createData("1432","Travis Scott", 18908421, "19 March 2022", "Rejected", "Rejected"),
-  createData("0967","Travis Scott", 18908421, "19 March 2022", "Approved", "Rejected"),
-  createData("9854","Travis Scott", 18908421, "19 March 2022", "Approved", "Rejected"),
-  createData("2309","Travis Scott", 18908421, "19 March 2022", "Rejected", "Rejected"),
-  createData("1723","Travis Scott", 18908421, "19 March 2022", "Pending", "Pending"),
-  createData("0256","Travis Scott", 18908421, "19 March 2022", "Approved", "Approved"),
-  createData("1001","Christopher Nolan ", 98710456, "2 March 2022", "Pending", "Approved"),
-  createData("0001","Cyllian Murphy", 41233789, "4 March 2022", "Approved", "Pending"),
+  createData("1234", "Ben Awad", 12306731, "2 March 2022", "Approved","Rejected","Rejected"),
+  createData("2345", "Christopher Nolan ", 98710456, "2 March 2022", "Pending", "Approved", "Pending"),
+  createData("3456", "Cyllian Murphy", 41233789, "4 March 2022", "Approved", "Pending", "Approved"),
+  createData("4567", "Jimmy Donald", 18908421, "19 March 2022", "Approved", "Rejected", "Rejected"),
+  createData("5678", "Travis lorej", 18908321, "19 March 2022", "Approved", "Rejected", "Rejected"),
+  createData("6789", "Carl hsfhd", 18908021, "19 March 2022", "Rejected", "Rejected", "Rejected"),
+  createData("7890", "Smith Scott", 18908421, "19 March 2022", "Approved", "Rejected", "Approved"),
+  createData("8910", "Raven Claw", 10208371, "19 March 2022", "Pending", "Pending", "Pending"),
+  createData("9012", "Shaun Scott", 18001421, "19 March 2022", "Approved", "Approved", "Approved"),
+  createData("0123", "Christopher Paul ", 98710456, "2 March 2022", "Pending", "Approved", "Pending"),
+  createData("1235", "Cyllian Ross", 41273789, "4 March 2022", "Approved", "Pending", "Approved"),
 ];
 
 
@@ -50,9 +51,12 @@ const makeStyle=(status)=>{
   }
 }
 
-export default function SalesTable() {
+function AccountStatusTable() {
+
+  const filteredRows = rows.filter((row) => row.accountstatus === "Approved");
+
   return (
-      <div className="SalesTable">
+      <div className="Table">
       <h3>Total Sales</h3>
 
         <TableContainer className="container-table"
@@ -65,16 +69,16 @@ export default function SalesTable() {
                 <TableCell>Client Name</TableCell>
                 <TableCell align="left">UID</TableCell>
                 <TableCell align="left">Date</TableCell>
-                <TableCell align="left">Sales Status</TableCell>
-                <TableCell align="left">Technical Status</TableCell>
-                <TableCell align="left">Details</TableCell>
+                <TableCell align="left">SalesStatus</TableCell>
+                <TableCell align="left">TechnicalStatus</TableCell>
+                <TableCell align="left">AccountStatus</TableCell>
                 <TableCell align="left"></TableCell>
               </TableRow>
             </TableHead>
             <TableBody style={{ color: "white" }}>
-              {rows.map((row) => (
+              {filteredRows.map((row) => (
                 <TableRow
-                  key={row.orderId}
+                  key={row.orderID}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">
@@ -88,7 +92,10 @@ export default function SalesTable() {
                   <TableCell align="center">
                     <span className="status" style={makeStyle(row.technicalstatus)}>{row.technicalstatus}</span>
                   </TableCell>
-                  <TableCell align="left" className="Details">Details</TableCell>
+                  <TableCell align="center">
+                    <span className="status" style={makeStyle(row.accountstatus)}>{row.accountstatus}</span>
+                  </TableCell>
+                  <TableCell align="left" className="Details"><Link to="/details">Details</Link></TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -97,3 +104,8 @@ export default function SalesTable() {
       </div>
   );
 }
+
+export default AccountStatusTable;
+
+
+
