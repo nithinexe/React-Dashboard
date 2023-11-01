@@ -6,14 +6,14 @@ import RightSide from "../RigtSide/RightSide";
 import "./../RigtSide/RightSide.css"
 const MainDash = () => {
   return (
-    <div className="MainDash">
+    <><div className="MainDash">
       {/* <div className="dashboard"> */}
-        <h1>Dashboard</h1>
-        <Cards />
-        <Table />
+      <h1>Dashboard</h1>
+      <Cards />
+      <Table />
       {/* </div> */}
       {/* <RightSide/> */}
-    </div>
+    </div><RightSide /></>
   );
 };
 

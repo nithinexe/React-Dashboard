@@ -33,7 +33,7 @@ function App() {
       <div className="AppGlass">
         <Sidebar/>
         <MainContent/>
-        <RightSide/>
+        {/* <RightSide/> */}
       </div>
     </div>
   );

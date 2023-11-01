@@ -1956,6 +1956,11 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@popperjs/core@2.11.5":
+  version "2.11.5"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.5.tgz#db5a11bf66bdab39569719555b0f76e138d7bd64"
+  integrity sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==
+
 "@popperjs/core@^2.11.6", "@popperjs/core@^2.11.8":
   version "2.11.8"
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.8.tgz"
@@ -3605,6 +3610,11 @@ cliui@^7.0.2:
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
     wrap-ansi "^7.0.0"
+
+clsx@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
 clsx@^1.1.1:
   version "1.2.1"
@@ -7063,6 +7073,20 @@ makeerror@1.0.12:
   dependencies:
     tmpl "1.0.5"
 
+mdb-react-ui-kit@^6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/mdb-react-ui-kit/-/mdb-react-ui-kit-6.3.0.tgz#9875beea761d8a52f53c4bf0e6629141d9a2f248"
+  integrity sha512-Ps9PUTfg4+28pl7LpKTAiTM5AHGifm75OUsF8pP7ztuEizvh+9kNM+Bwe8A9R0zy9ynbPtXuavlnwC1wJ85eCQ==
+  dependencies:
+    "@popperjs/core" "2.11.5"
+    clsx "1.1.1"
+    react-popper "2.3.0"
+
+mdb-ui-kit@^6.4.2:
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/mdb-ui-kit/-/mdb-ui-kit-6.4.2.tgz#80c7edf0f2d98a5fe3f05fcc06fc089f253604b8"
+  integrity sha512-EqFT7YxkTdBDMjk1OSyu90pXeTzTF1/2AwRJPj76CH9ORb4/nPvjfmbx6jBjlExIRXtcQNxqMq2wSi1i8ERvbw==
+
 mdn-data@2.0.14:
   version "2.0.14"
   resolved "https://registry.npmjs.org/mdn-data/-/mdn-data-2.0.14.tgz"
@@ -8443,6 +8467,11 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
+react-fast-compare@^3.0.1:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.2.tgz#929a97a532304ce9fee4bcae44234f1ce2c21d49"
+  integrity sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==
+
 react-form-component@^2.6.3:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/react-form-component/-/react-form-component-2.6.3.tgz#f996783fe1004e1d302077543b123b82076c46cd"
@@ -8497,6 +8526,14 @@ react-loading@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/react-loading/-/react-loading-2.0.3.tgz#e8138fb0c3e4674e481b320802ac7048ae14ffb9"
   integrity sha512-Vdqy79zq+bpeWJqC+xjltUjuGApyoItPgL0vgVfcJHhqwU7bAMKzysfGW/ADu6i0z0JiOCRJjo+IkFNkRNbA3A==
+
+react-popper@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.3.0.tgz#17891c620e1320dce318bad9fede46a5f71c70ba"
+  integrity sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q==
+  dependencies:
+    react-fast-compare "^3.0.1"
+    warning "^4.0.2"
 
 react-refresh@^0.11.0:
   version "0.11.0"
@@ -10053,7 +10090,7 @@ walker@^1.0.7:
   dependencies:
     makeerror "1.0.12"
 
-warning@^4.0.0, warning@^4.0.3:
+warning@^4.0.0, warning@^4.0.2, warning@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
