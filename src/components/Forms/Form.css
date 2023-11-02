@@ -86,3 +86,11 @@
   background-color: #0450b3;
   color: white;
 }
+.cancelButton{
+  background-color: #f44336;
+  color: white;
+}
+.uploadDocsButton{
+  background-color: green;
+  color: white;
+}

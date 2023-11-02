@@ -9,22 +9,22 @@ import Paper from "@mui/material/Paper";
 import "./AccountStatusTable.css";
 import { Link } from "react-router-dom";
 
-function createData(orderID, name, trackingId, date, status, technicalstatus, accountstatus, details) {
-  return { orderID, name, trackingId, date, status, technicalstatus,accountstatus, details };
+function createData(orderID, name, trackingId, date, technicalstatus, accountstatus, details) {
+  return { orderID, name, trackingId, date, technicalstatus,accountstatus, details };
 }
 
 const rows = [
-  createData("1234", "Ben Awad", 12306731, "2 March 2022", "Approved","Rejected","Rejected"),
-  createData("2345", "Christopher Nolan ", 98710456, "2 March 2022", "Pending", "Approved", "Pending"),
-  createData("3456", "Cyllian Murphy", 41233789, "4 March 2022", "Approved", "Pending", "Approved"),
-  createData("4567", "Jimmy Donald", 18908421, "19 March 2022", "Approved", "Rejected", "Rejected"),
-  createData("5678", "Travis lorej", 18908321, "19 March 2022", "Approved", "Rejected", "Rejected"),
-  createData("6789", "Carl hsfhd", 18908021, "19 March 2022", "Rejected", "Rejected", "Rejected"),
-  createData("7890", "Smith Scott", 18908421, "19 March 2022", "Approved", "Rejected", "Approved"),
-  createData("8910", "Raven Claw", 10208371, "19 March 2022", "Pending", "Pending", "Pending"),
-  createData("9012", "Shaun Scott", 18001421, "19 March 2022", "Approved", "Approved", "Approved"),
-  createData("0123", "Christopher Paul ", 98710456, "2 March 2022", "Pending", "Approved", "Pending"),
-  createData("1235", "Cyllian Ross", 41273789, "4 March 2022", "Approved", "Pending", "Approved"),
+  createData("1234", "Ben Awad", 12306731, "2 March 2022", "Approved","Rejected"),
+  createData("2345", "Christopher Nolan ", 98710456, "2 March 2022",  "Approved", "Pending"),
+  createData("3456", "Cyllian Murphy", 41233789, "4 March 2022", "Approved",  "Approved"),
+  createData("4567", "Jimmy Donald", 18908421, "19 March 2022", "Approved",  "Rejected"),
+  createData("5678", "Travis lorej", 18908321, "19 March 2022", "Approved", "Rejected"),
+  createData("6789", "Carl hsfhd", 18908021, "19 March 2022", "Rejected",  "Rejected"),
+  createData("7890", "Smith Scott", 18908421, "19 March 2022", "Approved", "Approved"),
+  createData("8910", "Raven Claw", 10208371, "19 March 2022", "Pending",  "Pending"),
+  createData("9012", "Shaun Scott", 18001421, "19 March 2022", "Approved", "Approved"),
+  createData("0123", "Christopher Paul ", 98710456, "2 March 2022", "Pending", "Approved"),
+  createData("1235", "Cyllian Ross", 41273789, "4 March 2022", "Approved", "Approved"),
 ];
 
 
@@ -57,7 +57,6 @@ function AccountStatusTable() {
 
   return (
       <div className="Table">
-      <h3>Total Sales</h3>
 
         <TableContainer className="container-table"
           component={Paper}
@@ -69,9 +68,9 @@ function AccountStatusTable() {
                 <TableCell>Client Name</TableCell>
                 <TableCell align="left">UID</TableCell>
                 <TableCell align="left">Date</TableCell>
-                <TableCell align="left">SalesStatus</TableCell>
-                <TableCell align="left">TechnicalStatus</TableCell>
-                <TableCell align="left">AccountStatus</TableCell>
+                {/* <TableCell align="center">Sales Status</TableCell> */}
+                <TableCell align="center">Technical Status</TableCell>
+                <TableCell align="center">Account Status</TableCell>
                 <TableCell align="left"></TableCell>
               </TableRow>
             </TableHead>
@@ -87,11 +86,11 @@ function AccountStatusTable() {
                   <TableCell align="left">{row.trackingId}</TableCell>
                   <TableCell align="left">{row.date}</TableCell>
                   <TableCell align="center">
-                    <span className="status" style={makeStyle(row.status)}>{row.status}</span>
-                  </TableCell>
-                  <TableCell align="center">
                     <span className="status" style={makeStyle(row.technicalstatus)}>{row.technicalstatus}</span>
                   </TableCell>
+                  {/* <TableCell align="center">
+                    <span className="status" style={makeStyle(row.status)}>{row.status}</span>
+                  </TableCell> */}
                   <TableCell align="center">
                     <span className="status" style={makeStyle(row.accountstatus)}>{row.accountstatus}</span>
                   </TableCell>

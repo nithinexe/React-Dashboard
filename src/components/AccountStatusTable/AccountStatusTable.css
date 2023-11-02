@@ -21,6 +21,8 @@
   
   .Details {
     color: #00b5ff !important;
+    text-decoration: none !important;
+
   }
   
   @media screen and (max-width: 1200px) {

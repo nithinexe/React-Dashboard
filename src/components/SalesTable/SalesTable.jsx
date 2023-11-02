@@ -7,23 +7,24 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "./SalesTable.css";
+import { Link } from "react-router-dom";
 
-function createData(orderId, name, trackingId, date, status, technicalstatus, details) {
-  return {orderId, name, trackingId, date, status, technicalstatus, details };
+function createData(orderId, name, trackingId, date, status, details) {
+  return {orderId, name, trackingId, date, status, details };
 }
 
 const rows = [
   createData("2312","Ben Awad", 12306731, "2 March 2022", "Approved","Rejected"),
-  createData("3223","Christopher Nolan ", 98710456, "2 March 2022", "Approved", "Approved"),
-  createData("6578","Cyllian Murphy", 41233789, "4 March 2022", "Approved", "Pending"),
-  createData("1432","Travis Scott", 18908421, "19 March 2022", "Rejected", "Rejected"),
-  createData("0967","Travis Scott", 18908421, "19 March 2022", "Approved", "Rejected"),
-  createData("9854","Travis Scott", 18908421, "19 March 2022", "Approved", "Rejected"),
-  createData("2309","Travis Scott", 18908421, "19 March 2022", "Rejected", "Rejected"),
-  createData("1723","Travis Scott", 18908421, "19 March 2022", "Pending", "Pending"),
-  createData("0256","Travis Scott", 18908421, "19 March 2022", "Approved", "Approved"),
-  createData("1001","Christopher Nolan ", 98710456, "2 March 2022", "Pending", "Approved"),
-  createData("0001","Cyllian Murphy", 41233789, "4 March 2022", "Approved", "Pending"),
+  createData("3223","Christopher Nolan ", 98710456, "2 March 2022", "Approved"),
+  createData("6578","Cyllian Murphy", 41233789, "4 March 2022", "Approved"),
+  createData("1432","Travis Scott", 18908421, "19 March 2022", "Rejected"),
+  createData("0967","Travis Scott", 18908421, "19 March 2022", "Approved"),
+  createData("9854","Travis Scott", 18908421, "19 March 2022", "Approved"),
+  createData("2309","Travis Scott", 18908421, "19 March 2022", "Rejected"),
+  createData("1723","Travis Scott", 18908421, "19 March 2022", "Pending"),
+  createData("0256","Travis Scott", 18908421, "19 March 2022", "Approved"),
+  createData("1001","Christopher Nolan ", 98710456, "2 March 2022", "Pending"),
+  createData("0001","Cyllian Murphy", 41233789, "4 March 2022", "Approved"),
 ];
 
 
@@ -65,9 +66,9 @@ export default function SalesTable() {
                 <TableCell>Client Name</TableCell>
                 <TableCell align="left">UID</TableCell>
                 <TableCell align="left">Date</TableCell>
-                <TableCell align="left">Sales Status</TableCell>
-                <TableCell align="left">Technical Status</TableCell>
-                <TableCell align="left">Details</TableCell>
+                <TableCell align="center">Sales Status</TableCell>
+                {/* <TableCell align="left">Technical Status</TableCell> */}
+                <TableCell align="left"></TableCell>
                 <TableCell align="left"></TableCell>
               </TableRow>
             </TableHead>
@@ -85,10 +86,10 @@ export default function SalesTable() {
                   <TableCell align="center">
                     <span className="status" style={makeStyle(row.status)}>{row.status}</span>
                   </TableCell>
-                  <TableCell align="center">
+                  {/* <TableCell align="center">
                     <span className="status" style={makeStyle(row.technicalstatus)}>{row.technicalstatus}</span>
-                  </TableCell>
-                  <TableCell align="left" className="Details">Details</TableCell>
+                  </TableCell> */}
+                  <TableCell align="left" className="Details"><Link to="/details">Details</Link></TableCell>
                 </TableRow>
               ))}
             </TableBody>

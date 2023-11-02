@@ -7,7 +7,7 @@ function AccountStatus() {
     return (
         <>
             <div className="accountstatus">
-                <h1>Account Status</h1>
+                <h1 className='accountstatusheader'>Account Status</h1>
                 <AccountStatusTable />
             </div>
             <RightSide />

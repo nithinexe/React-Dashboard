@@ -7,6 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "./TechnicalStatusTable.css";
+import { Link } from "react-router-dom";
 
 function createData(name, trackingId, date, status, technicalstatus, details) {
   return { name, trackingId, date, status, technicalstatus, details };
@@ -67,9 +68,9 @@ export default function TechnicalStatusTable() {
                 <TableCell>Client Name</TableCell>
                 <TableCell align="left">UID</TableCell>
                 <TableCell align="left">Date</TableCell>
-                <TableCell align="left">Sales Status</TableCell>
-                <TableCell align="left">Technical Status</TableCell>
-                <TableCell align="left">Details</TableCell>
+                <TableCell align="center">Sales Status</TableCell>
+                <TableCell align="center">Technical Status</TableCell>
+                <TableCell align="left"></TableCell>
                 <TableCell align="left"></TableCell>
               </TableRow>
             </TableHead>
@@ -90,7 +91,7 @@ export default function TechnicalStatusTable() {
                   <TableCell align="center">
                     <span className="status" style={makeStyle(row.technicalstatus)}>{row.technicalstatus}</span>
                   </TableCell>
-                  <TableCell align="left" className="Details">Details</TableCell>
+                  <TableCell align="left" className="Details"><Link to="/details">Details</Link></TableCell>
                 </TableRow>
               ))}
             </TableBody>
