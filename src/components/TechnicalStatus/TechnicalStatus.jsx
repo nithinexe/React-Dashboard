@@ -7,7 +7,7 @@ function TechnicalStatus() {
     return (
         <><div className="technicalstatus">
 
-            <h1>Technical Status</h1>
+            <h1 className='technicalstatusheader'>Technical Status</h1>
             <TechnicalStatusTable />
         </div><RightSide /></>
     )

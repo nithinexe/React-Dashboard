@@ -56,7 +56,7 @@ const makeStyle=(status)=>{
 export default function TechnicalStatusTable() {
   return (
       <div className="Table">
-      <h3>Total Sales</h3>
+
 
         <TableContainer className="container-table"
           component={Paper}
